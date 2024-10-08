@@ -1,0 +1,340 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Burelom";
+  src: url("./assets/fonts/FontsFree-Net-burelom-regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Burelom", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+/* .notAvailable {
+  display: none !important;
+} */
+
+/* crosuel */
+
+.team {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 20px;
+  color: #cecece;
+  animation: fadeIn 2s forwards; /* تطبيق الأنيميشن */
+}
+
+.present {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 18px;
+  color: #cecece;
+  animation: fadeIn 3s forwards; /* تطبيق الأنيميشن */
+  animation-delay: 2s; /* تأخير 2 ثواني */
+}
+
+.project-name {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 18px;
+  color: #cecece;
+  animation: fadeIn 3s forwards; /* تطبيق الأنيميشن */
+  animation-delay: 5s; /* تأخير 4 ثواني */
+}
+
+.start {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 17px;
+  color: #cecece;
+  cursor: pointer;
+  animation: startfadeIn 2s forwards; /* تطبيق الأنيميشن */
+  animation-delay: 8s; /* تأخير 6 ثواني */
+}
+
+/* //intro meassages animation  */
+@keyframes fadeIn {
+  0% {
+    visibility: hidden; /* يبدأ العنصر غير مرئي */
+    opacity: 0;
+  }
+  25% {
+    visibility: visible; /* يصبح مرئي */
+    opacity: 1;
+  }
+  75% {
+    visibility: visible; /* يبقى مرئي */
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden; /* يختفي العنصر */
+    opacity: 0;
+  }
+}
+@keyframes startfadeIn {
+  0% {
+    visibility: hidden; /* يبدأ العنصر غير مرئي */
+    opacity: 0;
+  }
+  100% {
+    visibility: visible; /* يصبح مرئي */
+    opacity: 1;
+  }
+}
+
+/* //ScrollIcone animation */
+
+.mouse-warper {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1000;
+  /* transition: all 0.5s ease; */
+}
+
+.mouse {
+  &::before {
+    animation: wheel 2s infinite;
+    -webkit-animation: wheel 2s infinite;
+  }
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 50px;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 50px;
+  }
+}
+
+/* //Transition page style */
+/* .slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  transform-origin: bottom;
+  z-index: 99999999999;
+} */
+
+.slide-in {
+  width: 100vw;
+  /* height: 100%; */
+  /* background: #000000 !important; */
+  transform-origin: bottom;
+  /* background-color: url(../src/assets/fantasy.jpg); */
+  background-size: 100vw 100vh;
+  background-position: center;
+}
+
+/* .slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  transform-origin: bottom;
+} */
+
+/* .container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+} */
+
+/* canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+} */
+/* .scroll-snap-container {
+  scroll-snap-type: y mandatory; 
+}
+
+.section {
+  scroll-snap-align:start ;
+} */
+
+Canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.btns-waper {
+  position: absolute;
+  bottom: 50px;
+  z-index: 99999999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.swiper-btn {
+  /* display: none; */
+  /* transform: translateY(-50%); */
+  background-color: #00000063;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.swiper-btn.next {
+  right: 0;
+}
+
+@media screen and (max-width: 700px) {
+  /* .Home {
+    display: none !important;
+  } */
+
+  /* .notAvailable {
+    display: flex !important;
+  }
+ */
+  .planet-description {
+    display: none;
+  }
+  #section-1 h1 {
+    font-size: 2.5rem !important;
+  }
+
+  #section-2 {
+    grid-template-columns: 1fr !important;
+  }
+  #section-3 > div {
+    width: 100% !important;
+  }
+  .about-page-team-section {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 5px !important;
+  }
+  .meber {
+    justify-self: unset; /* إزالة أي محاذاة سابقة */
+  }
+  .meber:nth-of-type(1),
+  .meber:nth-of-type(3),
+  .meber:nth-of-type(5) {
+    justify-self: flex-start !important; /* العنصر الأول، الثالث، الخامس يبدأ من اليسار */
+  }
+  .meber:nth-of-type(2),
+  .meber:nth-of-type(4),
+  .meber:nth-of-type(6) {
+    justify-self: flex-end !important; /* العنصر الثاني، الرابع، السادس يبدأ من اليمين */
+  }
+}
+
+/* .about-page{
+  z-index: 999999999 !important;
+} */
+
+.card {
+  position: relative;
+  height: 250px;
+
+  /* width: 350px; */
+  background: radial-gradient(#111 50%, #000 100%);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: scale(1.2);
+  transition: 0.3s ease-out;
+  object-fit: cover;
+}
+
+.card:hover .card-img {
+  transform: scale(1.1) translateY(-20px);
+  opacity: 0.3;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.text-h1 {
+  transform: translateY(30px);
+  opacity: 0;
+  padding: 3px 0;
+  transition: all 0.3s ease-out;
+}
+
+.text-p {
+  transform: translateY(30px);
+  opacity: 0;
+  padding: 3px 0;
+
+  transition: all 0.3s ease-out 0.2s;
+}
+
+.link-a {
+  display: inline-block;
+  background: crimson;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.3s ease-out 0.4s;
+}
+
+.link-a:hover {
+  background: rgb(95, 199, 10);
+}
+
+.card:hover .text-h1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .text-p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .link-a {
+  opacity: 1;
+  transform: translateY(0);
+}
